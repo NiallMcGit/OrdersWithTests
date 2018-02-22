@@ -1,0 +1,8 @@
+enable-migrations -ContextTypeName Week3OrdersWithTests.Models.Orders.BusinessDBContext -MigrationsDirectory Migrations\OrderMigrations
+
+add-migration -ConfigurationTypeName Week3OrdersWithTests.Migrations.OrderMigrations.Configuration "Initial Migration"
+
+--Rollback Migration--
+update-database -ConfigurationTypeName Week3OrdersWithTests.Migrations.OrderMigrations.Configuration -targetmigration:0
+
+update-database -ConfigurationTypeName Week3OrdersWithTests.Migrations.OrderMigrations.Configuration

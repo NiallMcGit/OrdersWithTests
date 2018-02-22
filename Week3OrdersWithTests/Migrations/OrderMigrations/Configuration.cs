@@ -82,20 +82,6 @@ namespace Week3OrdersWithTests.Migrations.OrderMigrations
             context.SaveChanges();
 
         }
-        public static Product FromCsv(string csvLine)
-        {
-            Random random = new Random();
-            // Get data and assign each value
-            string[] values = csvLine.Split(',');
-            Product ProductData = new Product();
-            ProductData.Description = values[0];
-            ProductData.StockOnHand = Convert.ToInt32(values[1]);
-            ProductData.ReorderLevel = Convert.ToInt32(values[2]);
-            ProductData.ReorderQuantity = 20;
-            ProductData.UnitPrice = random.Next(3, 8);
-
-            return ProductData;
-        }
 
         private void importProductsCSV(BusinessDBContext context)
         {
